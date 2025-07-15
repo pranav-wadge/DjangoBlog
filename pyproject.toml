@@ -1,0 +1,7 @@
+[project]
+name = "django-blog"
+version = "0.1.0"
+description = "My Blog App"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
