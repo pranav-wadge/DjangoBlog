@@ -1,0 +1,43 @@
+{%extends 'portfolio/base.html'%}
+{% load static %}
+
+{%block main%}
+  <main class="main">
+
+    <section id="services" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Blog</h2>
+        <p>High quality articles written in collaboration with ChatGPT</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+            <div class="row gy-4">
+              {% for article in object_list %}
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div >
+                <img style="border: 0px solid red; border-radius: 10px; " src="{{article.image.url}}" height="200px" />
+              </div>
+              <a href="{% url 'blog_detail' article.slug %}" class="stretched-link">
+                <h3>{{ article.title }}</h3>
+              </a>
+              <p>{{article.content |truncatechars:200}}</p>
+              <br>
+              <p>{{article.created_at}}</p>
+            </div>
+          </div><!-- End Service Item -->
+                {% empty %}
+                    <li>No articles yet.</li>
+                {% endfor %}
+    
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+{%endblock%}

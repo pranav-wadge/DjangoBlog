@@ -1,0 +1,30 @@
+{%extends 'portfolio/base.html'%}
+{% load static %}
+
+{%block main%}
+<main class="main">
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <!-- Section Title -->
+      <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+        <h2>{{object.title}}</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+            <img src="{{object.image.url}}">
+        </div>
+        <div class="row">
+            <div class="col">
+                {{object.content}}
+            </div>
+        </div>
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+{%endblock%}
