@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.views.generic import TemplateView
 
-def home(request):
-    return HttpResponse("Welcome to the Portfolio Home Page")
+
+
+class IndexView(TemplateView):
+    template_name = "portfolio/index.html"
